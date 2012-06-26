@@ -8,6 +8,10 @@ Included as dependencies by default:
 * django-celery
 * south
 
+It also splits the settingsup into core/dev/prod
+It also includes simple 404.html and 500.html templates,
+ since every project needs them.
+
 
 
 To create project:
