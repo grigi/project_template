@@ -2,3 +2,6 @@
 ==================
 
 Project for {{ project_name }}
+
+To create project:
+django-admin.py startproject --template=https://github.com/grigi/project_template/zipball/master foo
