@@ -35,6 +35,6 @@ Add to foo/settings/common.py to the INSTALLED_APPS:
     'bar',
 
 It automatically adds serving static content under media/
-
+It automatically adds the templates to be processed
 
 
