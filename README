@@ -1,7 +1,40 @@
-{{ project_name }}
-==================
+Project Template for a Django project
+=====================================
 
-Project for {{ project_name }}
+Creates a Django Project that is structured well, is an egg (ditributable),
+ and works with minimal changes.
+
+Included as dependencies by default:
+* django-celery
+* south
+
+
 
 To create project:
-django-admin.py startproject --template=https://github.com/grigi/project_template/zipball/master foo
+------------------
+django-admin.py startproject --template=https://github.com/grigi/project_template/zipball/master --name="*.py,MANIFEST.in" foo
+cd foo
+chmod +x manage.py
+
+Please change the README file, as this is this is the templates README
+
+Now just run:
+./manage.py syncdb
+./manahe.py runserver
+
+
+
+To add app:
+-----------
+cp -a app.sample bar
+
+Add to foo/urls.py:
+    url(r'^bar/', include('bar.urls')),
+
+Add to foo/settings/common.py to the INSTALLED_APPS:
+    'bar',
+
+It automatically adds serving static content under media/
+
+
+
