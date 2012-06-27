@@ -63,6 +63,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    normpath(join(PROJECT_ROOT, '{{ project_name }}/static')),
 )
 
 # List of finder classes that know how to find static files in
@@ -83,6 +84,16 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+)
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -96,7 +107,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = '{{ project_name }}.urls'
 
 TEMPLATE_DIRS = [
-    normpath(join(PROJECT_ROOT, '{{ project_name }}.templates')),
+    normpath(join(PROJECT_ROOT, '{{ project_name }}/templates')),
 ]
 
 INSTALLED_APPS = (
@@ -121,6 +132,7 @@ INSTALLED_APPS = (
     'djcelery',
 
     # Add your apps here
+
 )
 
 # Celery Confguration
