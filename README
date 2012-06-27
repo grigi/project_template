@@ -7,11 +7,12 @@ Creates a Django Project that is structured well, is an egg (ditributable),
 Included as dependencies by default:
 * django-celery
 * south
+* html5boilerplate
 
 It also splits the settingsup into core/dev/prod
-It also includes simple 404.html and 500.html templates,
+It also includes 404.html and 500.html templates,
  since every project needs them.
-
+It also includes a base_template based on html5boilerplate.
 
 
 To create project:
@@ -31,7 +32,10 @@ Now just run:
 
 To add app:
 -----------
-cp -a app.sample bar
+django-admin.py startapp --template=https://github.com/grigi/project_template_app/zipball/master --extension="py,html,in" bar
+cat bar/MANIFEST.in >> MANIFEST.in
+rm bar/MANIFEST.in
+rm bar/README
 
 Add to foo/urls.py:
     url(r'^bar/', include('bar.urls')),
@@ -39,10 +43,7 @@ Add to foo/urls.py:
 Add to foo/settings/common.py to the INSTALLED_APPS:
     'bar',
 
-Update bar/urls.py to reflect the app name:
-    urlpatterns = patterns('bar.views',
-
-It automatically adds serving static content under static/
+It automatically adds serving static/foo/ content under static/foo/
 It automatically adds the templates to be processed
 
 
