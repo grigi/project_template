@@ -15,11 +15,13 @@ It also includes 404.html and 500.html templates,
 It also includes a base_template based on html5boilerplate.
 
 
+
 To create project:
 ------------------
 django-admin.py startproject --template=https://github.com/grigi/project_template/zipball/master --name="*.py,MANIFEST.in" foo
 cd foo
 chmod +x manage.py
+chmod +x app_create.py
 
 Please change the README file, as this is this is the templates README
 
@@ -32,18 +34,11 @@ Now just run:
 
 To add app:
 -----------
-django-admin.py startapp --template=https://github.com/grigi/project_template_app/zipball/master --extension="py,html,in" bar
-cat bar/MANIFEST.in >> MANIFEST.in
-rm bar/MANIFEST.in
-rm bar/README
+./app_create.sh bar
 
-Add to foo/urls.py:
-    url(r'^bar/', include('bar.urls')),
-
-Add to foo/settings/common.py to the INSTALLED_APPS:
-    'bar',
+And follow directions.
 
 It automatically adds serving static/foo/ content under static/foo/
-It automatically adds the templates to be processed
+It automatically adds the templates to be processed.
 
 
