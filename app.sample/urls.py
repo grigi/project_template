@@ -7,6 +7,6 @@ urlpatterns = patterns('app.views',
 
 ) + patterns('',
     # Serve the apps static dir
-    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '%s/media' % APP_ROOT}),
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '%s/static' % APP_ROOT}),
 )
 

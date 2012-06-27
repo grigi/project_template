@@ -24,6 +24,7 @@ Please change the README file, as this is this is the templates README
 
 Now just run:
 ./manage.py syncdb
+./manage.py migrate
 ./manahe.py runserver
 
 
@@ -38,7 +39,10 @@ Add to foo/urls.py:
 Add to foo/settings/common.py to the INSTALLED_APPS:
     'bar',
 
-It automatically adds serving static content under media/
+Update bar/urls.py to reflect the app name:
+    urlpatterns = patterns('bar.views',
+
+It automatically adds serving static content under static/
 It automatically adds the templates to be processed
 
 
