@@ -21,7 +21,7 @@ To create project:
 django-admin.py startproject --template=https://github.com/grigi/project_template/zipball/master --name="*.py,MANIFEST.in" foo
 cd foo
 chmod +x manage.py
-chmod +x app_create.py
+chmod +x app_create.sh
 
 Please change the README file, as this is this is the templates README
 

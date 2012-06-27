@@ -15,10 +15,10 @@ cat $1/MANIFEST.in >> MANIFEST.in
 rm $1/MANIFEST.in
 rm $1/README
 
-echo "Add to $PROJ_NAME/urls.py:"
+echo "Add to $PROJ_NAME/urls.py"
 echo "    url(r'^$1/', include('$1.urls')),"
 echo
-echo "Add to $PROJ_NAME/settings/common.py to the INSTALLED_APPS:"
+echo "Add to $PROJ_NAME/settings/common.py to the INSTALLED_APPS"
 echo "    '$1',"
 echo
 
