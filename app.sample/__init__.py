@@ -1,3 +1,4 @@
+# __init__ for app '{{ app_name }}'
 from django.conf import settings
 import os
 import inspect
