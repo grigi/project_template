@@ -2,17 +2,24 @@ Project Template for a Django project
 =====================================
 
 Creates a Django Project that is structured well, is an egg (ditributable),
- and works with minimal changes.
+ and works with minimal changes. Much of this work is based on rdegges/django-skel.
 
-Included as dependencies by default:
+Features:
+* Useable with minimal configuration
+* Settings split up into core/dev/prod
+* Sample wsgi files
+* Templates are automatically added to template processor path
+* Static file management for easy deployment
+* Using html5boilerplate
+* Standard 404 and 500 templates 
+* base template
+* Sample templates inheriting the base template
+
+It includes as default dependencies:
+* JQuery
 * django-celery
 * south
-* html5boilerplate
-
-It also splits the settingsup into core/dev/prod
-It also includes 404.html and 500.html templates,
- since every project needs them.
-It also includes a base_template based on html5boilerplate.
+* admin
 
 
 
