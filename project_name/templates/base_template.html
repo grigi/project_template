@@ -12,7 +12,7 @@
        More info: h5bp.com/i/378 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title></title>
+  <title>{% block title %}{% endblock %}</title>
   <meta name="description" content="">
 
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
@@ -21,8 +21,11 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
   <link rel="stylesheet" href="css/style.css">
+  {% block styles %}{% endblock %}
 
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  {% block posthead %}{% endblock %}
 
   <!-- All JavaScript at the bottom, except this Modernizr build.
        Modernizr enables HTML5 elements & feature detects for optimal performance.
@@ -33,25 +36,15 @@
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-  <header>
 
-  </header>
-  <div role="main">
-
-  </div>
-  <footer>
-
-  </footer>
-
+  <header>{% block header %}{% endblock %}</header>
+  <div role="main">{% block body %}{% endblock %}</div>
+  <footer>{% block footer %}{% endblock %}</footer>
 
   <!-- JavaScript at the bottom for fast page loading -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="js/libs/jquery-1.7.1.min.js"></script>
-
-  <!-- scripts concatenated and minified via build script -->
   <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
+  {% block scripts %}{% endblock %}
   <!-- end scripts -->
 </body>
 </html>
