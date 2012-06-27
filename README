@@ -26,7 +26,7 @@ Please change the README file, as this is this is the templates README
 Now just run:
 ./manage.py syncdb
 ./manage.py migrate
-./manahe.py runserver
+./manage.py runserver
 
 
 

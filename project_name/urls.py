@@ -1,5 +1,6 @@
 from os.path import dirname,normpath,abspath
 from django.conf.urls import patterns, include, url
+from django.conf import settings
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/admin/#hooking-adminsite-instances-into-your-urlconf
 from django.contrib import admin
