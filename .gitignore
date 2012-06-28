@@ -41,4 +41,5 @@ pip-log.txt
 
 # default db
 default.db
+default.db-journal
 
