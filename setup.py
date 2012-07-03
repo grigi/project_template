@@ -27,6 +27,7 @@ setup(
         'django >=1.4, <1.5',
         'django-celery >=2.5, <2.6',
         'south >=0.7, <0.8',
+        'python-memcached >= 1.47',
     ],
     dependency_links = [
 	# For example, this project would be something like:
