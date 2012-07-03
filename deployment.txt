@@ -10,9 +10,9 @@ For this we assume you are using a Linux host with:
 
 As root, on the server:
 -----------------------
-# Add a System User (-r) {{ project_name }}, in directory /opt/{{ project_name }}
+# Add a System User (-r) '{{ project_name }}', in directory '/opt/{{ project_name }}'
 useradd -r -d /opt/{{ project_name }} -m -s /bin/bash {{ project_name }}
-# Change to the user
+# Change to the container
 su - {{ project_name }}
 
 As the Container User:
@@ -40,6 +40,8 @@ python setup.py sdist
 
 # Copy the tarball 'dist/{{ project_name }}-0.1.tar.gz' to the Python container
 
+As the Container User:
+----------------------
 # Install the project
 pip install <tarball>
 # If anything fails to build, resolve it manually.

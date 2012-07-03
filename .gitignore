@@ -43,3 +43,5 @@ pip-log.txt
 default.db
 default.db-journal
 
+# local_settings.py
+local_settings.py

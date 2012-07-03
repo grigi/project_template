@@ -25,7 +25,7 @@ It includes as default dependencies:
 
 To create project:
 ------------------
-django-admin.py startproject --template=https://github.com/grigi/project_template/zipball/master --extension="py,in,conf" --name="deployment.txt" foo
+django-admin.py startproject --template=https://github.com/grigi/project_template/zipball/master --extension="py,in,conf" --name="deployment.txt,local_settings.py.sample" foo
 cd foo
 chmod +x manage.py
 chmod +x app_create.sh
