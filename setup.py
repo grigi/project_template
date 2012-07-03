@@ -25,9 +25,9 @@ setup(
     # Dependencies
     install_requires = [
         'django >=1.4, <1.5',
-        'django-celery >=2.5, <2.6',
-        'south >=0.7, <0.8',
         'python-memcached >= 1.47',
+        #'django-celery >=2.5, <2.6',
+        #'south >=0.7, <0.8',
     ],
     dependency_links = [
 	# For example, this project would be something like:
@@ -36,6 +36,11 @@ setup(
 
     # Packages
     packages = find_packages(),
-    include_package_data = True
+    include_package_data = True,
+
+    # Scripts
+    scripts = [
+       '{{ project_name }}/wsgi_prod.py',
+    ],
 )
 

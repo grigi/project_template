@@ -126,10 +126,10 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     # Database migration helpers:
-    'south',
+    #'south',
 
     # Asynchronous task queue:
-    'djcelery',
+    #'djcelery',
 
     # Add your apps here
 

@@ -31,8 +31,8 @@ source ~/bin/activate
 # /opt/{{ project_name }}/bin/python
 
 
-Install project
-===============
+Deploy project
+==============
 
 # In your project root
 # Build a source blob:
@@ -52,8 +52,23 @@ export DJANGO_SETTINGS_MODULE="{{ project_name }}.settings.prod"
 
 # Run 'django-admin.py validate' to confirm that your environment is set up correctly
 
+# For static content, make sure that a static folder exists
+# By default it is '/opt/{{ project_name }}/static/' for production
+# Edit STATIC_ROOT in the settings to change it.
+
+# Now make sure it exists
+mkdir /opt/{{ project_name }}/static/
+
+# Collect all the static content in one place, for easy serving :-)
+# Make sure to run this after every deployment update
+django-admin.py collectstatic
+
 
 Configuring Apache
 ==================
 
+Add a configuration file in the apache config directory.
+You can use the sample file in '{{ project_name }}/apache-sample.conf' as a base.
+
+Please update references to <CNAME> to the cname of the vhost.
 

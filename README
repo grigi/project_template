@@ -17,8 +17,8 @@ Features:
 
 It includes as default dependencies:
 * JQuery
-* django-celery
-* south
+* django-celery (commented out by default)
+* south (commented out by default)
 * admin
 
 
@@ -36,7 +36,7 @@ If you delete the README file, update the long_description parameter to
 
 Now just run:
 ./manage.py syncdb
-./manage.py migrate
+./manage.py migrate  # only if you enabled south
 ./manage.py runserver
 
 
