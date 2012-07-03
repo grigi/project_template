@@ -6,7 +6,7 @@ then
     exit 1
 fi
 
-PROJ_NAME=`cat manage.py | grep DJANGO_SETTINGS_MODULE | sed 's/^[^"]*"[^"]*"[^"]*"//' | sed 's/\..*$//'`
+PROJ_NAME=`cat manage.py | grep settings_path\ = | head -1 | sed 's/^[^"]*"//' | sed 's/\..*$//'`
 
 echo "Creating app '$1' in project '$PROJ_NAME'"
 
