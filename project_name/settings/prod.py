@@ -20,6 +20,12 @@ INSTALLED_APPS += (
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = '{{ project_name }}.wsgi_prod.application'
 
+# Absolute path to the directory static files should be collected to.
+# Don't put anything in this directory yourself; store your static files
+# in apps' "static/" subdirectories and in STATICFILES_DIRS.
+# Example: "/home/media/media.lawrence.com/static/"
+STATIC_ROOT = '/opt/{{ project_name }}/static/'
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.

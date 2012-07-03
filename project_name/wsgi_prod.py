@@ -13,6 +13,12 @@ middleware here, or combine a Django application with an application of another
 framework.
 
 """
+
+# This is needed to activate the virtualenv for Apache, or another wsgi server
+# Uncomment it and update for virtualenv - Before any python code!
+# activate_this = '/opt/{{ project_name }}/bin/activate_this.py'
+# execfile(activate_this, dict(__file__=activate_this))
+
 import os
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ project_name }}.settings.prod")

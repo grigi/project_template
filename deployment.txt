@@ -1,0 +1,57 @@
+Sample instructions on how to deploy
+====================================
+
+Create Python container
+=======================
+
+For this we assume you are using a Linux host with:
+ * Python >= 2.6
+ * virtualenv
+
+As root, on the server:
+-----------------------
+# Add a System User (-r) {{ project_name }}, in directory /opt/{{ project_name }}
+useradd -r -d /opt/{{ project_name }} -m -s /bin/bash {{ project_name }}
+# Change to the user
+su - {{ project_name }}
+
+As the Container User:
+----------------------
+# Create virtualenv in user root
+virtualenv --no-site-packages . 
+
+# Confirm or Edit that your ~/.profile or ~/.bashrc contains the following:
+source ~/bin/activate
+
+# Log out an back in to your session again
+
+# Do a `which python` to see that you are using the right version
+# Result should be something like:
+# ~/bin/python
+# /opt/{{ project_name }}/bin/python
+
+
+Install project
+===============
+
+# In your project root
+# Build a source blob:
+python setup.py sdist
+
+# Copy the tarball 'dist/{{ project_name }}-0.1.tar.gz' to the Python container
+
+# Install the project
+pip install <tarball>
+# If anything fails to build, resolve it manually.
+# Common causes are lack of a -dev package to build some library against.
+
+# Confirm or Edit that your ~/.profile or ~/.bashrc contains the following:
+export DJANGO_SETTINGS_MODULE="{{ project_name }}.settings.prod"
+
+# Run 'django-admin.py validate' to confirm that your environment is set up correctly
+
+
+Configuring Apache
+==================
+
+
