@@ -136,10 +136,11 @@ INSTALLED_APPS = (
 )
 
 # Celery Confguration
+'''
 from djcelery import setup_loader
 # See: http://celery.readthedocs.org/en/latest/configuration.html#celery-task-result-expires
 CELERY_TASK_RESULT_EXPIRES = timedelta(minutes=30)
 # See: http://celery.github.com/celery/django/
 setup_loader()
-
+'''
 

@@ -65,9 +65,10 @@ CACHES = {
 }
 
 # Celery
+'''
 # See: http://docs.celeryq.org/en/latest/configuration.html#celery-always-eager
 CELERY_ALWAYS_EAGER = True
 # Tests run in-queue
 TEST_RUNNER = 'djcelery.contrib.test_runner.CeleryTestSuiteRunner'
-
+'''
 
