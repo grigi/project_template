@@ -1,6 +1,6 @@
 # Django Dev settings for {{ project_name }} project.
 
-from common import *
+from .common import *
 from os import environ
 
 DATABASES = {

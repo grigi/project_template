@@ -1,7 +1,7 @@
 # Django Dev settings for {{ project_name }} project.
 
 from os.path import normpath, join
-from common import *
+from .common import *
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG

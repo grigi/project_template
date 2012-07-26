@@ -1,0 +1,18 @@
+django >=1.4
+docutils >=0.9
+
+# Some recommended packages:
+
+# Memcached
+# python-memcached >= 1.47
+# Python 3 memcache support
+# python3-memcached >= 1.44
+
+# PostgreSQL DB driver
+# psycopg2
+
+# Only Python 2 as of now
+# python-mysql
+# django-celery >=3.0, <3.1
+# south >=0.7, <0.8
+# django-tastypie >=0.9, <1.0

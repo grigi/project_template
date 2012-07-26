@@ -8,6 +8,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    # Admin documentation
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     # Admin panel
     url(r'^admin/', include(admin.site.urls)),
 
@@ -27,7 +29,5 @@ if settings.DEBUG:
         (r'^favicon\.ico$', 'django.views.static.serve', { 'document_root': staticroot, "path":'favicon.ico' }),
         (r'^robots\.txt$', 'django.views.static.serve', { 'document_root': staticroot, "path":'robots.txt' }),
         (r'^crossdomain\.xml$', 'django.views.static.serve', { 'document_root': staticroot, "path":'crossdomain.xml' }),
-        # Admin documentation
-        url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     )
 
