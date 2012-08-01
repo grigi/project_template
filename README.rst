@@ -54,6 +54,7 @@ To add app:
 
 And follow directions.
 
+Note:
  * It automatically adds serving static/foo/ content under static/foo/
  * It automatically adds the templates to be processed.
 
