@@ -66,18 +66,37 @@ Now simulate what a ``pip install -e`` (Editable package) would do.
 
 Now install as per the 'To create project' instructions.
 
-Once that is done, get the path::
+The rest here is to make your package available in your python path:
+  Once that is done, get the path::
 
-  pwd
+    pwd
 
-Append that path to ``lib/python2.7/site-packages/easy-install.pth`` (or equivalent) from the root of the virtualenv.
+  Append that path to ``lib/python2.7/site-packages/easy-install.pth`` (or equivalent) from the root of the virtualenv.
 
-Now your new package is available in your python path::
+  Now your new package is available in your python path::
 
-  python
-  >>> import foo
-  (No import error)
+    python
+    >>> import foo
+    (No import error)
   
+  If you want your app runnable from ``django-admin.py`` anywhere in the virtualenv (not just from the primary projects root) you now only need to define the ``DJANGO_SETTINGS_MODULE`` environment variable::
+
+    DJANGO_SETTINGS_MODULE="foo.settings.dev"
+
+  A good place to put it is in your ``bin/activate`` script::
+    ...
+    # reset old environment variables
+    unset DJANGO_SETTINGS_MODULE
+    ...
+    export PATH
+
+    export DJANGO_SETTINGS_MODULE="ssoserver.settings.dev"
+
+    # unset PYTHONHOME if set
+    ...
+
+Tip:
+  If you want your virtualenv to auto-load when you cd into it follow instructions on http://www.redslider.net/2011/2011-11-22-auto-source-virtualenv-settings.html
 
 To create project:
 ------------------
