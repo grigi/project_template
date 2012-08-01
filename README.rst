@@ -86,14 +86,19 @@ The rest here is to make your package available in your python path:
   A good place to put it is in your ``bin/activate`` script:
 
     | ...
+    |
     | # reset old environment variables
+    |
     | **unset DJANGO_SETTINGS_MODULE**
+    |
     | ...
+    |
     | export PATH
     | 
     | **export DJANGO_SETTINGS_MODULE="ssoserver.settings.dev"**
     | 
     | # unset PYTHONHOME if set
+    |
     | ...
 
 Tip:
