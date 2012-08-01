@@ -10,7 +10,7 @@ For this we assume you are using a Linux host with:
 
 As root, on the server:
 -----------------------
-Add a System User (-r) '{{ project_name }}', in directory '/opt/{{ project_name }}'::
+Add a System User (-r) '``{{ project_name }}``', in directory '``/opt/{{ project_name }}``'::
 
   useradd -r -d /opt/{{ project_name }} -m -s /bin/bash {{ project_name }}
 
@@ -24,7 +24,7 @@ Create virtualenv in user root::
 
   virtualenv --no-site-packages . 
 
-Confirm or Edit that your ~/.profile or ~/.bashrc contains the following::
+Confirm or Edit that your ``~/.profile`` or ``~/.bashrc`` contains the following::
 
   source ~/bin/activate
 
@@ -56,7 +56,7 @@ Install the project::
 If anything fails to build, resolve it manually.
 Common causes are lack of a ``-dev`` package to build some library against.
 
-Confirm or Edit that your ~/.profile or ~/.bashrc contains the following::
+Confirm or Edit that your ``~/.profile`` or ``~/.bashrc`` contains the following::
 
   export DJANGO_SETTINGS_MODULE="{{ project_name }}.settings.prod"
 
