@@ -35,8 +35,12 @@ To create project:
   chmod +x manage.py
   chmod +x app_create.sh
 
-Please change the README file, as this is this is the templates README.
-If you delete the README file, update the long_description parameter to
+Make sure that development runtime requirements are installed::
+
+  pip install requirements.txt 
+
+Please change the ``README.rst`` file, as this is this is the templates README.
+If you delete the ``README.rst`` file, update the long_description parameter to
 either point to the new README file, or comment it out.
 
 Now just run::
@@ -44,6 +48,8 @@ Now just run::
   ./manage.py syncdb
   ./manage.py migrate  # only if you enabled south
   ./manage.py runserver
+
+Please pay attention to the ``setup.py`` file, as this is the configuration file that would be used for deployment.
 
 
 To add app:

@@ -16,7 +16,7 @@ setup(
     name='{{ project_name }}',
     version = '0.1',
     description='Project for {{ project_name }}',
-    long_description=read('README'),
+    long_description=read('README.rst'),
     author='Internet Solutions',
     author_email='si@is.co.za',
     url='',
@@ -25,9 +25,8 @@ setup(
     # Dependencies
     install_requires = [
         'django >=1.4, <1.5',
-        #'python-memcached >= 1.47',
         'django-compressor >=1.1',
-        'django-devserver >=0.3',
+        #'python-memcached >= 1.47',
         #'django-celery >=2.5, <2.6',
         #'south >=0.7, <0.8',
     ],

@@ -30,6 +30,8 @@ WSGI_APPLICATION = '{{ project_name }}.wsgi_dev.application'
 STATIC_ROOT = normpath(join(PROJECT_ROOT, 'static_root'))
 
 INSTALLED_APPS += (
+    # django-devserver documentation: https://github.com/dcramer/django-devserver
+    'devserver',
     # Any dev-only apps to include
 )
 
