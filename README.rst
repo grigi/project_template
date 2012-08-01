@@ -84,6 +84,7 @@ The rest here is to make your package available in your python path:
     DJANGO_SETTINGS_MODULE="foo.settings.dev"
 
   A good place to put it is in your ``bin/activate`` script::
+
     ...
     # reset old environment variables
     unset DJANGO_SETTINGS_MODULE
