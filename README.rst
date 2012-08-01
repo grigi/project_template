@@ -84,16 +84,16 @@ The rest here is to make your package available in your python path:
     DJANGO_SETTINGS_MODULE="foo.settings.dev"
 
   A good place to put it is in your ``bin/activate`` script:
-    |...
-    |# reset old environment variables
-    |**unset DJANGO_SETTINGS_MODULE**
-    |...
-    |export PATH
-    |
-    |**export DJANGO_SETTINGS_MODULE="ssoserver.settings.dev"**
-    |
-    |# unset PYTHONHOME if set
-    ...
+    | ...
+    | # reset old environment variables
+    | **unset DJANGO_SETTINGS_MODULE**
+    | ...
+    | export PATH
+    | 
+    | **export DJANGO_SETTINGS_MODULE="ssoserver.settings.dev"**
+    | 
+    | # unset PYTHONHOME if set
+    | ...
 
 Tip:
   If you want your virtualenv to auto-load when you cd into it follow instructions on http://www.redslider.net/2011/2011-11-22-auto-source-virtualenv-settings.html
