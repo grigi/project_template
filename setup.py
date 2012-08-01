@@ -25,7 +25,9 @@ setup(
     # Dependencies
     install_requires = [
         'django >=1.4, <1.5',
-        'python-memcached >= 1.47',
+        #'python-memcached >= 1.47',
+        'django-compressor >=1.1',
+        'django-devserver >=0.3',
         #'django-celery >=2.5, <2.6',
         #'south >=0.7, <0.8',
     ],

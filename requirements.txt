@@ -1,5 +1,7 @@
 django >=1.4
 docutils >=0.9
+django-compressor >=1.1
+django-devserver >=0.3
 
 # Some recommended packages:
 
