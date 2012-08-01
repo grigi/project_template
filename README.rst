@@ -10,6 +10,8 @@ Features:
  * Sample wsgi files
  * Templates are automatically added to template processor path
  * Static file management for easy deployment
+ * Autmatic CSS and Javascript compression support
+ * Automatic less/coffeescript compilation that works transparently on referenced files or inline scripts. (Needs node.js with less and coffeescript)
  * Using html5boilerplate
  * Standard 404 and 500 templates 
  * base template
@@ -19,7 +21,9 @@ It includes as default dependencies:
  * JQuery
  * admin
  * django-compressor
+   http://django_compressor.readthedocs.org/en/latest/index.html
  * django-devserver
+   https://github.com/dcramer/django-devserver
 
 The following dependencies have default configuration added in a commented out state by default, for easy inclusion:
  * django-celery
