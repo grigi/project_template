@@ -29,6 +29,55 @@ The following dependencies have default configuration added in a commented out s
  * django-celery
  * south
 
+To setup initial virtualenv:
+----------------------------
+
+Note:
+  This part can be skipped, but is a convenient (and recommended)  way of isolating your development environment, and making it closer to how you would likely deploy it on a server.
+
+Check that virtualenv is installed::
+
+  pip install virtualenv
+
+First, create a new directory that will contain your virtualenv, and setup::
+
+  mkdir fooenv
+  cd fooenv
+  virtualenv .
+  . bin/activate
+
+At this point you should have your virtualenv up and running.
+Test that your virtualenv is running correctly::
+
+  which python
+
+Should be inside your current directory.
+
+Now install django::
+
+  pip install django
+
+Now simulate what a ``pip install -e`` (Editable package) would do.
+(You only need to do it the first time, thereafter you could just do ``pip install -e <SOURCE REPO>`` to install it the same)
+::
+
+  mkdir src
+  cd src
+
+Now install as per the 'To create project' instructions.
+
+Once that is done, get the path::
+
+  pwd
+
+Append that path to ``lib/python2.7/site-packages/easy-install.pth`` (or equivalent) from the root of the virtualenv.
+
+Now your new package is available in your python path::
+
+  python
+  >>> import foo
+  (No import error)
+  
 
 To create project:
 ------------------
@@ -41,7 +90,7 @@ To create project:
 
 Make sure that development runtime requirements are installed::
 
-  pip install requirements.txt 
+  pip install -r requirements.txt 
 
 Please change the ``README.rst`` file, as this is this is the templates README.
 If you delete the ``README.rst`` file, update the long_description parameter to
