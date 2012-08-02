@@ -18,8 +18,13 @@ Features:
  * Sample templates inheriting the base template
 
 It includes as default dependencies:
- * JQuery
  * admin
+ * JQuery
+   http://jquery.com/
+   (Version 1.7.2 bundled)
+ * Bootstrap
+   http://twitter.github.com/bootstrap/index.html
+   (Version 2.0.4 bundled)
  * django-compressor
    http://django_compressor.readthedocs.org/en/latest/index.html
  * django-devserver
