@@ -20,6 +20,8 @@
 
   {% compress css %}
   <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+  <link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}less/bootstrap.less" charset="utf-8">
+  <link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}less/responsive.less" charset="utf-8">
   {% endcompress %}
   {% compress css %}
   <!-- Here is the sub-template specific CSS in a separate block -->
@@ -45,6 +47,18 @@
   <!-- JavaScript at the bottom for fast page loading -->
   <script src="{{ STATIC_URL }}js/libs/jquery-1.7.1.min.js"></script>
   <script src="{{ STATIC_URL }}js/plugins.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap-transition.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap-modal.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap-dropdown.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap-scrollspy.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap-tab.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap-tooltip.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap-popover.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap-alert.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap-button.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap-collapse.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap-carousel.js"></script>
+  <script src="{{ STATIC_URL }}js/bootstrap-typeahead.js"></script>
   {% endcompress %}
   {% compress js %}
   <!-- Here is the sub-template specific JS in a separate block -->
