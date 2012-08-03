@@ -139,6 +139,11 @@ INSTALLED_APPS = (
 
 )
 
+# Jinja2 Configuration
+JINJA2_EXTENSIONS = [
+    'compressor.contrib.jinja2ext.CompressorExtension',
+]
+
 # Celery Confguration
 '''
 from djcelery import setup_loader

@@ -26,6 +26,8 @@ setup(
     install_requires = [
         'django >=1.4, <1.5',
         'django-compressor >=1.1',
+        'coffin',
+        'Jinja2',
         #'python-memcached >= 1.47',
         #'django-celery >=2.5, <2.6',
         #'south >=0.7, <0.8',

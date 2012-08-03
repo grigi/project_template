@@ -5,6 +5,8 @@ django-devserver >=0.3
 django-nose
 coverage
 pinocchio
+Jinja2
+coffin
 
 # django-celery >=3.0, <3.1
 # south >=0.7, <0.8
