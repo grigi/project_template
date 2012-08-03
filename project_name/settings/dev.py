@@ -29,11 +29,21 @@ WSGI_APPLICATION = '{{ project_name }}.wsgi_dev.application'
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = normpath(join(PROJECT_ROOT, 'static_root'))
 
+# Some commonly set django-compressor options
+#COMPRESS_ENABLED = True
+#COMPRESS_OFFLINE = True
+
 INSTALLED_APPS += (
     # django-devserver documentation: https://github.com/dcramer/django-devserver
     'devserver',
+    # django-nose testing framework: http://nose.readthedocs.org/ 
+    'django_nose',
     # Any dev-only apps to include
 )
+
+# Nose configuration
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+NOSE_ARGS = ['--with-cov','--cov-report=term-missing','--with-spec','--spec-color']
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

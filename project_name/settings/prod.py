@@ -27,6 +27,10 @@ WSGI_APPLICATION = '{{ project_name }}.wsgi_prod.application'
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = '/opt/{{ project_name }}/static/'
 
+# Some commonly set django-compressor options
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = True
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.

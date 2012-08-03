@@ -16,6 +16,8 @@ Features:
  * Standard 404 and 500 templates 
  * base template
  * Sample templates inheriting the base template
+ * Using Nose test framework http://nose.readthedocs.org/ http://nose-plugins.jottit.com/
+ * Test coverage
 
 It includes as default dependencies:
  * admin
@@ -29,6 +31,10 @@ It includes as default dependencies:
    http://django_compressor.readthedocs.org/en/latest/index.html
  * django-devserver
    https://github.com/dcramer/django-devserver
+ * django-nose
+ * nose-cov (nose coverage plugin)
+ * pinoccio (nose spec plugin)
+
 
 The following dependencies have default configuration added in a commented out state by default, for easy inclusion:
  * django-celery
@@ -118,7 +124,7 @@ To create project:
   chmod +x manage.py
   chmod +x app_create.sh
 
-Make sure that development runtime requirements are installed::
+Make sure that development runtime & testing requirements are installed::
 
   pip install -r requirements.txt 
 
@@ -134,6 +140,13 @@ Now just run::
 
 Please pay attention to the ``setup.py`` file, as this is the configuration file that would be used for deployment.
 
+Note:
+  The sample template uses ``less``, and ``coffeescript``. Please make sure that you have the following installed:
+    * ``nodejs`` http://nodejs.org/ (node.js)
+    * ``npm install less``
+    * ``npm install coffeescript``
+
+  The version of less that ships with ruby (if using rvm to install) is somewhat broken.
 
 To add app:
 -----------

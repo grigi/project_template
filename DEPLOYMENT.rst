@@ -76,6 +76,8 @@ Make sure to run this after every deployment update::
 
   django-admin.py collectstatic
 
+  django-admin.py compress # If you are using django-compressor and COMPRESS_OFFLINE
+
 
 Configuring Apache
 ==================
