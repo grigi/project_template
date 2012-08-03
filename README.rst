@@ -16,8 +16,9 @@ Features:
  * Standard 404 and 500 templates 
  * base template
  * Sample templates inheriting the base template
- * Using Nose test framework http://nose.readthedocs.org/ http://nose-plugins.jottit.com/
+ * Using Nose test framework
  * Test coverage
+ * Optional Jinja2 templating engine via coffin
 
 It includes as default dependencies:
  * admin
@@ -32,8 +33,17 @@ It includes as default dependencies:
  * django-devserver
    https://github.com/dcramer/django-devserver
  * django-nose
- * nose-cov (nose coverage plugin)
- * pinoccio (nose spec plugin)
+   http://nose.readthedocs.org/
+   http://nose-plugins.jottit.com/
+ * nose-cov
+   https://bitbucket.org/memedough/nose-cov/overview
+   (nose coverage plugin)
+ * pinoccio
+   http://darcs.idyll.org/~t/projects/pinocchio/doc/
+   (nose spec plugin)
+ * Jinja2/coffin
+   http://jinja.pocoo.org/
+   https://github.com/coffin/coffin
 
 
 The following dependencies have default configuration added in a commented out state by default, for easy inclusion:
