@@ -75,24 +75,6 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
-# See the django-compressor docs at http://django_compressor.readthedocs.org/en/latest/settings/
-COMPRESS_CSS_FILTERS = [
-    'compressor.filters.css_default.CssAbsoluteFilter',
-    'compressor.filters.cssmin.CSSMinFilter',
-]
-COMPRESS_JS_FILTERS = [
-    'compressor.filters.jsmin.JSMinFilter',
-]
-# This configures any extra content types inside compress tags, and will automaticaly
-# precompile it for you.
-#
-# These assume you have coffeescript and less installed with nodejs npm command
-# Note: less installed using ruby doesn't work as well.
-COMPRESS_PRECOMPILERS = (
-    ('text/coffeescript', 'coffee --compile --stdio'),
-    ('text/less', 'lessc {infile} {outfile}'),
-)
-
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '{{ secret_key }}'
 

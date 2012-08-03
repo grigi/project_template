@@ -32,6 +32,9 @@ STATIC_ROOT = normpath(join(PROJECT_ROOT, 'static_root'))
 # Some commonly set django-compressor options
 #COMPRESS_ENABLED = True
 #COMPRESS_OFFLINE = True
+# Typlically you would uncomment these when using compress_enabled in development:
+#COMPRESS_CSS_FILTERS = []
+#COMPRESS_JS_FILTERS = []
 
 INSTALLED_APPS += (
     # django-devserver documentation: https://github.com/dcramer/django-devserver
@@ -43,6 +46,7 @@ INSTALLED_APPS += (
 
 # Nose configuration
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+# Do test coverage + spec output in colour
 NOSE_ARGS = ['--with-cov','--cov-report=term-missing','--with-spec','--spec-color']
 
 # A sample logging configuration. The only tangible logging

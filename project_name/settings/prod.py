@@ -27,9 +27,27 @@ WSGI_APPLICATION = '{{ project_name }}.wsgi_prod.application'
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = '/opt/{{ project_name }}/static/'
 
-# Some commonly set django-compressor options
+COMPRESS_OFFLINE = True
+# See the django-compressor docs at http://django_compressor.readthedocs.org/en/latest/settings/
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSMinFilter',
+]
+COMPRESS_JS_FILTERS = [
+    'compressor.filters.jsmin.JSMinFilter',
+]
+# This configures any extra content types inside compress tags, and will automaticaly
+# precompile it for you.
+#
+# These assume you have coffeescript and less installed with nodejs npm command
+# Note: less installed using ruby doesn't work as well.
+COMPRESS_PRECOMPILERS = (
+    ('text/coffeescript', 'coffee --compile --stdio'),
+    ('text/less', 'lessc {infile} {outfile}'),
+)
+
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
