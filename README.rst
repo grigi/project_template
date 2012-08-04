@@ -19,6 +19,7 @@ Features:
  * Using Nose test framework
  * Test coverage
  * Optional Jinja2 templating engine via coffin
+ * Optional HAML support
 
 It includes as default dependencies:
  * admin
@@ -41,12 +42,14 @@ It includes as default dependencies:
  * pinoccio
    http://darcs.idyll.org/~t/projects/pinocchio/doc/
    (nose spec plugin)
- * Jinja2/coffin
-   http://jinja.pocoo.org/
-   https://github.com/coffin/coffin
 
 
 The following dependencies have default configuration added in a commented out state by default, for easy inclusion:
+ * Jinja2/coffin
+   http://jinja.pocoo.org/
+   https://github.com/coffin/coffin
+ * jinja2-hamlpy
+   https://github.com/grigi/jinja2-hamlpy
  * django-celery
  * south
 
