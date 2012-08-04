@@ -10,7 +10,7 @@ PROJ_NAME=`cat manage.py | grep settings_path\ = | head -1 | sed 's/^[^"]*"//' |
 
 echo "Creating app '$1' in project '$PROJ_NAME'"
 
-django-admin.py startapp --template=https://github.com/grigi/project_template_app/zipball/master --extension="py,html,in" $1
+django-admin.py startapp --template=https://github.com/grigi/project_template_app/zipball/master --extension="py,html,haml,in" $1
 cat $1/MANIFEST.in >> MANIFEST.in
 rm $1/MANIFEST.in
 rm $1/README

@@ -36,6 +36,16 @@ STATIC_ROOT = normpath(join(PROJECT_ROOT, 'static_root'))
 #COMPRESS_CSS_FILTERS = []
 #COMPRESS_JS_FILTERS = []
 
+# This configures any extra content types inside compress tags, and will automaticaly
+# precompile it for you.
+#
+# These assume you have coffeescript and less installed with nodejs npm command
+# Note: less installed using ruby doesn't work as well.
+#COMPRESS_PRECOMPILERS = (
+#    ('text/coffeescript', 'coffee --compile --stdio'),
+#    ('text/less', 'lessc {infile} {outfile}'),
+#)
+
 INSTALLED_APPS += (
     # django-devserver documentation: https://github.com/dcramer/django-devserver
     'devserver',
