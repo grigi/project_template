@@ -17,8 +17,8 @@ setup(
     version = '0.1',
     description='Project for {{ project_name }}',
     long_description=read('README.rst'),
-    author='Internet Solutions',
-    author_email='si@is.co.za',
+    author='',
+    author_email='',
     url='',
     zip_safe = False,
 
@@ -26,15 +26,18 @@ setup(
     install_requires = [
         'django >=1.4, <1.5',
         'django-compressor >=1.1',
-        'coffin',
-        'Jinja2',
+        # Jinja2 & Hamlpy 
+        #'coffin >=0.3.6',
+        #'Jinja2 >=2.6',
+        #'jinja2-hamlpy',
+
         #'python-memcached >= 1.47',
         #'django-celery >=2.5, <2.6',
         #'south >=0.7, <0.8',
     ],
     dependency_links = [
 	# For example, this project would be something like:
-        # 'git+ssh://git@github.com/InternetSolutions/{{ project_name }}.git@master#egg={{ project_name }}-0.1',
+        # 'git+ssh://git@github.com/USERNAME/{{ project_name }}.git@master#egg={{ project_name }}-0.1',
     ],
 
     # Packages
