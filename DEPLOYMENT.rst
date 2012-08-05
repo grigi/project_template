@@ -87,3 +87,10 @@ You can use the sample file in ``{{ project_name }}/apache-sample.conf`` as a ba
 
 Please update references to ``<CNAME>`` to the cname of the vhost.
 
+Configuring GUnicorn
+====================
+
+Since Django runs on wsgi, to use GUnicorn you need only point it to your wsgi file::
+
+  gunicorn {{ project_name }}.wsgi_prod:application
+
