@@ -90,6 +90,10 @@ SECRET_KEY = '{{ secret_key }}'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
+    # Uncomment the next 2 lines for HAML support vir Djaml
+    #'djaml.loaders.DjamlFilesystemLoader',
+    #'djaml.loaders.DjamlAppDirectoriesLoader',
+
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
