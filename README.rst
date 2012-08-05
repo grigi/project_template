@@ -18,7 +18,6 @@ Features:
  * Sample templates inheriting the base template
  * Using Nose test framework
  * Test coverage
- * Optional Jinja2 templating engine via coffin
  * Optional HAML support
 
 It includes as default dependencies:
@@ -45,11 +44,8 @@ It includes as default dependencies:
 
 
 The following dependencies have default configuration added in a commented out state by default, for easy inclusion:
- * Jinja2/coffin
-   http://jinja.pocoo.org/
-   https://github.com/coffin/coffin
- * jinja2-hamlpy
-   https://github.com/grigi/jinja2-hamlpy
+ * Djaml (Optional HAML support)
+   https://github.com/chartjes/djaml
  * django-celery
  * south
 

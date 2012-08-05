@@ -149,12 +149,6 @@ INSTALLED_APPS = (
 
 )
 
-# Jinja2 Configuration
-JINJA2_EXTENSIONS = [
-    'compressor.contrib.jinja2ext.CompressorExtension',
-    'jinja2_hamlpy.HamlPyExtension',
-]
-
 # Celery Confguration
 '''
 from djcelery import setup_loader

@@ -26,16 +26,15 @@ setup(
     install_requires = [
         'django >=1.4, <1.5',
         'django-compressor >=1.1',
-        # Jinja2 & Hamlpy 
-        #'coffin >=0.3.6',
-        #'Jinja2 >=2.6',
-        #'jinja2-hamlpy',
+
+	#'djaml',
 
         #'python-memcached >= 1.47',
         #'django-celery >=2.5, <2.6',
         #'south >=0.7, <0.8',
     ],
     dependency_links = [
+        'git+ssh://git@github.com/culebron/djaml.git#egg=djaml',
 	# For example, this project would be something like:
         # 'git+ssh://git@github.com/USERNAME/{{ project_name }}.git@master#egg={{ project_name }}-0.1',
     ],

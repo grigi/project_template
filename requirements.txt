@@ -6,12 +6,8 @@ django-nose
 nose-cov
 pinocchio
 
-# Optional Jinja2 templating engine
-#Jinja2 >=2.6
-#Pygments >=1.5
-#coffin >=0.3.6
-# HamlPy plugin for Jinja2
-#jinja2-hamlpy
+# Optional HAML support
+# git+ssh://git@github.com/culebron/djaml.git#egg=djaml
 
 # django-celery >=3.0, <3.1
 # south >=0.7, <0.8
