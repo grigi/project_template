@@ -48,6 +48,10 @@ COMPRESS_PRECOMPILERS = (
     ('text/less', 'lessc {infile} {outfile}'),
 )
 
+# Cache parsed templates
+TEMPLATE_LOADERS = (
+    ('django.template.loaders.cached.Loader', TEMPLATE_LOADERS),
+)
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
