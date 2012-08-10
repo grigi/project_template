@@ -178,6 +178,7 @@ Django-Compressor:
   To use Django-Compressor, uncomment:
    * Set ``HAS_compressor`` in ``{{ project_name }}/settings/common.py`` to True
    * ``django-compressor`` in both ``setup.py`` and ``requirements.txt``
+   * Copy (or merge if you have changed it) ``{{ project_name }}/templates/base.html.compressor`` to ``{{ project_name }}/templates/base.html``
    * Rerun::
 
       pip install -r requirements.txt
