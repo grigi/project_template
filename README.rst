@@ -27,8 +27,6 @@ It includes as default dependencies:
  * Bootstrap
    http://twitter.github.com/bootstrap/index.html
    (Version 2.0.4 bundled)
- * django-compressor
-   http://django_compressor.readthedocs.org/en/latest/index.html
 
 The following dependancies are optional in dev-mode only. It will automatically use these libraries if you have them installed:
  * django-devserver
@@ -44,6 +42,10 @@ The following dependancies are optional in dev-mode only. It will automatically 
    (nose spec plugin)
 
 The following dependencies have default configuration added in a commented out state by default, for easy inclusion:
+ * django-compressor
+   http://django_compressor.readthedocs.org/en/latest/index.html
+   * Autmatic CSS and Javascript compression support
+   * Automatic less/coffeescript compilation that works transparently on referenced files or inline scripts. (Needs node.js with less and coffeescript)
  * Djaml (Optional HAML support)
    https://github.com/chartjes/djaml
  * django-celery
@@ -168,4 +170,22 @@ And follow directions.
 Note:
  * It automatically adds serving static/foo/ content under static/foo/
  * It automatically adds the templates to be processed.
+
+To enable optional features:
+----------------------------
+
+Django-Compressor:
+  To use Django-Compressor, uncomment:
+   * HAS_compressor in {{ project_name }}/settings/common.py
+   * ``django-compressor`` in both ``setup.py`` and ``requirements.txt``
+   * Rerun::
+
+      pip install -r requirements.txt
+
+  This also enables you seamless ``less``, and ``coffeescript`` usage. Please make sure that you have the following installed:
+   * ``nodejs`` http://nodejs.org/ (node.js)
+   * ``npm install less``
+   * ``npm install coffeescript``
+
+  The version of less that ships with ruby (if using rvm to install) is somewhat broken.
 

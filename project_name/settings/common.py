@@ -5,6 +5,13 @@ import {{ project_name }}
 
 DEBUG = False
 
+# Optional support
+# Uncomment this line and its counterpart in both setup.py and requirements.txt
+#HAS_compressor = True
+#HAS_haml = True
+#HAS_celery = True
+#HAS_south = True
+
 ADMINS = (
      #('Name', 'e@mail.com'),
 )
@@ -72,28 +79,13 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-    'compressor.finders.CompressorFinder',
-)
-
-# This configures any extra content types inside compress tags, and will automaticaly
-# precompile it for you.
-#
-# These assume you have coffeescript and less installed with nodejs npm command
-# Note: less installed using ruby doesn't work as well.
-COMPRESS_PRECOMPILERS = (
-    ('text/coffeescript', 'coffee --compile --stdio'),
-    ('text/less', 'lessc {infile} {outfile}'),
 )
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '{{ secret_key }}'
 
 # List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    # Uncomment the next 2 lines for HAML support vir Djaml
-    #'djaml.loaders.DjamlFilesystemLoader',
-    #'djaml.loaders.DjamlAppDirectoriesLoader',
-
+TEMPLATE_LOADERS += (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
@@ -140,25 +132,54 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
 
-    # Django-Compressor:
-    'compressor',
-
-    # Database migration helpers:
-    #'south',
-
-    # Asynchronous task queue:
-    #'djcelery',
-
     # Add your apps here
 
 )
 
+# South Configuration
+if HAS_south:
+    INSTALLED_APPS += (
+        # Database migration helpers:
+        'south',
+    )
+
 # Celery Confguration
-'''
-from djcelery import setup_loader
-# See: http://celery.readthedocs.org/en/latest/configuration.html#celery-task-result-expires
-CELERY_TASK_RESULT_EXPIRES = timedelta(minutes=30)
-# See: http://celery.github.com/celery/django/
-setup_loader()
-'''
+if HAS_celery:
+    INSTALLED_APPS += (
+        # Asynchronous task queue:
+        'djcelery',
+    )
+    from djcelery import setup_loader
+    # See: http://celery.readthedocs.org/en/latest/configuration.html#celery-task-result-expires
+    CELERY_TASK_RESULT_EXPIRES = timedelta(minutes=30)
+    # See: http://celery.github.com/celery/django/
+    setup_loader()
+
+if HAS_haml:
+    TEMPLATE_LOADERS = (
+        # djaml must load first, else standard Django template loaders will try to process HAML
+        'djaml.loaders.DjamlFilesystemLoader',
+        'djaml.loaders.DjamlAppDirectoriesLoader',
+    ) + TEMPLATE_LOADERS
+
+
+if HAS_compressor:
+    INSTALLED_APPS += (
+        # Django-Compressor:
+        'compressor',
+    )
+
+    STATICFILES_FINDERS += (
+        'compressor.finders.CompressorFinder',
+    )
+
+    # This configures any extra content types inside compress tags, and will automaticaly
+    # precompile it for you.
+    #
+    # These assume you have coffeescript and less installed with nodejs npm command
+    # Note: less installed using ruby doesn't work as well.
+    COMPRESS_PRECOMPILERS = (
+        ('text/coffeescript', 'coffee --compile --stdio'),
+        ('text/less', 'lessc {infile} {outfile}'),
+    )
 

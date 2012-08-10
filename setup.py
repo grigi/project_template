@@ -14,7 +14,7 @@ def read(fname):
 
 setup(
     name='{{ project_name }}',
-    version = '0.1',
+    version = '0.1.0',
     description='Project for {{ project_name }}',
     long_description=read('README.rst'),
     author='',
@@ -29,7 +29,7 @@ setup(
 
 	# Optional features
         #'django-compressor >=1.1',
-	#'djaml',
+	#'djaml >=1.1',
         #'django-celery >=2.5, <2.6',
         #'south >=0.7, <0.8',
     ],
