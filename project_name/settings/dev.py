@@ -8,6 +8,27 @@ TEMPLATE_DEBUG = DEBUG
 # This makes runserver send exceptions to the console
 # DEBUG_PROPAGATE_EXCEPTIONS = DEBUG
 
+# Test if django-nose is available
+try:
+    import django_nose
+    HAS_nose = True
+    try:
+        import pinocchio
+        import nose_cov
+        HAS_noseaddons = True
+    except ImportError:
+        HAS_noseaddons = False
+except ImportError:
+    HAS_nose = False
+
+# Test if devserver is available
+try:
+    import devserver
+    HAS_devserver = True
+except ImportError:
+    HAS_devserver = False
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', 
@@ -47,12 +68,20 @@ STATIC_ROOT = normpath(join(PROJECT_ROOT, 'static_root'))
 #)
 
 INSTALLED_APPS += (
-    # django-devserver documentation: https://github.com/dcramer/django-devserver
-    'devserver',
-    # django-nose testing framework: http://nose.readthedocs.org/ 
-    'django_nose',
     # Any dev-only apps to include
 )
+
+if HAS_devserver:
+    INSTALLED_APPS += (
+        # django-devserver documentation: https://github.com/dcramer/django-devserver
+        'devserver',
+    )
+
+if HAS_nose:
+    INSTALLED_APPS += (
+        # django-nose testing framework: http://nose.readthedocs.org/ 
+        'django_nose',
+    )
 
 # Nose configuration
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'

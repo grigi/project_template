@@ -10,14 +10,13 @@ Features:
  * Sample wsgi files
  * Templates are automatically added to template processor path
  * Static file management for easy deployment
- * Autmatic CSS and Javascript compression support
- * Automatic less/coffeescript compilation that works transparently on referenced files or inline scripts. (Needs node.js with less and coffeescript)
  * Using html5boilerplate
- * Standard 404 and 500 templates 
+ * Standard 404 and 500 templates
  * base template
  * Sample templates inheriting the base template
- * Using Nose test framework
- * Test coverage
+ * Autmatic CSS and Javascript compression support
+ * Automatic less/coffeescript compilation that works transparently on referenced files or inline scripts. (Needs node.js with less and coffeescript)
+ * Optional Nose test framework with test coverage
  * Optional HAML support
 
 It includes as default dependencies:
@@ -30,6 +29,8 @@ It includes as default dependencies:
    (Version 2.0.4 bundled)
  * django-compressor
    http://django_compressor.readthedocs.org/en/latest/index.html
+
+The following dependancies are optional in dev-mode only. It will automatically use these libraries if you have them installed:
  * django-devserver
    https://github.com/dcramer/django-devserver
  * django-nose
@@ -41,7 +42,6 @@ It includes as default dependencies:
  * pinoccio
    http://darcs.idyll.org/~t/projects/pinocchio/doc/
    (nose spec plugin)
-
 
 The following dependencies have default configuration added in a commented out state by default, for easy inclusion:
  * Djaml (Optional HAML support)

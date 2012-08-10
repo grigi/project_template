@@ -25,16 +25,16 @@ setup(
     # Dependencies
     install_requires = [
         'django >=1.4, <1.5',
-        'django-compressor >=1.1',
-
-	#'djaml',
-
         #'python-memcached >= 1.47',
+
+	# Optional features
+        #'django-compressor >=1.1',
+	#'djaml',
         #'django-celery >=2.5, <2.6',
         #'south >=0.7, <0.8',
     ],
     dependency_links = [
-        'git+ssh://git@github.com/culebron/djaml.git#egg=djaml',
+        'git+ssh://git@github.com/chartjes/djaml.git#egg=djaml',
 	# For example, this project would be something like:
         # 'git+ssh://git@github.com/USERNAME/{{ project_name }}.git@master#egg={{ project_name }}-0.1',
     ],
