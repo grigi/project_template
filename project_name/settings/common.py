@@ -6,11 +6,12 @@ import {{ project_name }}
 DEBUG = False
 
 # Optional support
-# Uncomment this line and its counterpart in both setup.py and requirements.txt
-#HAS_compressor = True
-#HAS_haml = True
-#HAS_celery = True
-#HAS_south = True
+# Change the following to True and uncomment its counterparts in both setup.py and requirements.txt
+HAS_compressor = False
+HAS_haml = False
+HAS_celery = False
+HAS_south = False
+
 
 ADMINS = (
      #('Name', 'e@mail.com'),
@@ -85,7 +86,7 @@ STATICFILES_FINDERS = (
 SECRET_KEY = '{{ secret_key }}'
 
 # List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS += (
+TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',

@@ -176,7 +176,7 @@ To enable optional features:
 
 Django-Compressor:
   To use Django-Compressor, uncomment:
-   * HAS_compressor in {{ project_name }}/settings/common.py
+   * Set ``HAS_compressor`` in ``{{ project_name }}/settings/common.py`` to True
    * ``django-compressor`` in both ``setup.py`` and ``requirements.txt``
    * Rerun::
 
