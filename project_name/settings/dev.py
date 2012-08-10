@@ -71,22 +71,25 @@ INSTALLED_APPS += (
     # Any dev-only apps to include
 )
 
+# Configuring optional devserver
 if HAS_devserver:
     INSTALLED_APPS += (
         # django-devserver documentation: https://github.com/dcramer/django-devserver
         'devserver',
     )
 
+# Configuring optional nose & addons
 if HAS_nose:
     INSTALLED_APPS += (
         # django-nose testing framework: http://nose.readthedocs.org/ 
         'django_nose',
     )
 
-# Nose configuration
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-# Do test coverage + spec output in colour
-NOSE_ARGS = ['--with-cov','--cov-report=term-missing','--with-spec','--spec-color']
+    # Nose configuration
+    TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+    if HAS_noseaddons:
+        # Do test coverage + spec output in colour
+        NOSE_ARGS = ['--with-cov','--cov-report=term-missing','--with-spec','--spec-color']
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
